@@ -1,0 +1,16 @@
+ <header class="header">
+    <nav class="nav__bar">
+        
+        <div class="nav__menu">
+            <ul class="nav__list">
+               
+            </ul>
+
+           
+        </div>
+
+        
+
+    </nav>
+
+</header>

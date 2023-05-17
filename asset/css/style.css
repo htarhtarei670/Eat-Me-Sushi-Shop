@@ -1,0 +1,957 @@
+    @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Lora:wght@500;600&family=Poppins:wght@400;500&display=swap");
+    *,
+    *::before,
+    * ::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    /* -------------prefix css style------------------- */
+    
+     :root {
+        --background-color: #FFF1EB;
+        --body-font: "Poppins", sans-serif;
+        --title-font: "Lora", serif;
+        --subtitle-font: "Dancing Script", cursive;
+        --text-color: #A6948C;
+        --title-color: #2C2420;
+        --sub-title-color: #DC7A44;
+        --white-color: #FFFFFF;
+        --grey-color: #948279;
+        --black-color: #181818;
+        --white--color--filter: #FFF5F0;
+        --black-red-color: #2F231D;
+    }
+    
+    body {
+        background-color: var(--background-color);
+        font-family: var(--body-font);
+        color: var(--black-color);
+        transition: background 0.4s;
+        max-width: 100vw;
+        overflow-x: hidden;
+        /* position: relative; */
+    }
+    
+    body.dark-theme {
+        --background-color: #171412;
+        --title-font: #E2D5D0;
+        --white--color--filter: #1C1917;
+        --black-color: #E2C9B7;
+        --title-color: #AAA09C;
+    }
+    
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    h1,
+    h2,
+    h3 {
+        font-family: var(--title-font);
+    }
+    
+    h4,
+    h5,
+    h6 {
+        font-family: var(--subtitle-font);
+    }
+    
+    ul {
+        list-style: none;
+    }
+    
+    a {
+        text-decoration: none;
+        color: var(--title-color);
+    }
+    
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    p {
+        color: var(--grey-color);
+        font-size: .95rem;
+    }
+    
+    main {
+        padding: 110px 20px;
+        width: 100vw;
+        overflow: hidden;
+    }
+    
+    section {
+        max-width: 1254px;
+    }
+    /* -----------------reuseable css classes------------- */
+    
+    .container {
+        margin-inline: 1.3rem;
+    }
+    
+    .grid {
+        display: grid;
+        gap: 1.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1.3rem;
+        color: var(--sub-title-color);
+        padding-bottom: -10px;
+    }
+    
+    .title {
+        font-size: 1.5rem;
+        font-weight: 100;
+        padding-top: 10px;
+        font-family: var(--title-font);
+    }
+    
+    .titles-group {
+        line-height: 20px;
+    }
+    /*-----------------header and nav bar--------------  */
+    
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: var(--background-color);
+        padding: 15px 25px;
+        width: 100vw;
+        z-index: 100;
+        height: 70px;
+    }
+    
+    .nav__bar {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 10px;
+    }
+    
+    .logo {
+        display: flex;
+        color: var(--title-color);
+        font-weight: bold;
+        font-family: var(--title-font);
+    }
+    
+    .logo img {
+        width: 30px;
+        padding-right: 8px;
+    }
+    
+    .nav__button {
+        display: flex;
+        font-size: 1.3rem;
+        cursor: pointer;
+        height: 25px;
+    }
+    
+    .nav__toggle {
+        padding-left: 15px;
+    }
+    
+    .nav__menu.show {
+        top: 0;
+    }
+    
+    .nav__menu .leaf1,
+    .nav__menu .leaf2 {
+        opacity: 0;
+    }
+    
+    .header.scroll {
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 20px 29px -20px;
+        padding-bottom: 20px;
+    }
+    
+    @media only screen and (max-width:767px) {
+        /* ------for navbar-------- */
+        .nav__menu {
+            position: fixed;
+            top: -100%;
+            left: 0;
+            height: 310px;
+            background-color: var(--background-color);
+            width: 100vw;
+            text-align: center;
+            padding-block: 45px;
+            z-index: 100;
+            box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+            cursor: pointer;
+        }
+        .nav__items {
+            padding: 17px 0;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        .nav__close {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 1.5rem;
+        }
+        .nav__menu .leaf1 {
+            width: 100px;
+            position: absolute;
+            top: 1rem;
+            left: -2rem;
+            transform: rotate(155deg);
+            opacity: .2;
+        }
+        .nav__menu .leaf2 {
+            width: 50px;
+            position: absolute;
+            bottom: 1rem;
+            right: -1rem;
+            transform: rotate(-35deg);
+            opacity: .2;
+        }
+        .active,
+        .nav__items:hover a {
+            color: var(--sub-title-color);
+        }
+    }
+    /* ----------------------home page ------------------ */
+    
+    #home {
+        position: relative;
+        padding-top: 100px;
+    }
+    
+    .home__sushi-img {
+        width: 350px;
+        margin: 10px auto;
+    }
+    
+    .home__content {
+        text-align: center;
+    }
+    
+    .home__content h3 {
+        font-size: 2.4rem;
+        font-weight: 100;
+        color: var(--title-color);
+    }
+    
+    .sushi {
+        font-size: 2.3rem;
+        font-weight: 100;
+        color: var(--title-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--title-font);
+    }
+    
+    .sushi img {
+        width: 40px;
+        margin-right: 7px;
+    }
+    
+    .home__content p {
+        color: var(--grey-color);
+        padding-top: 20px;
+        /* text-align: center; */
+        font-size: .95rem;
+        padding-bottom: 50px;
+    }
+    
+    .home__order-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .home__order-btn a {
+        background-color: var(--sub-title-color);
+        padding: 15px 25px;
+        border-radius: 35px;
+        color: var(--white-color);
+    }
+    
+    .home__order-btn i {
+        font-size: 1.4rem;
+        padding-left: 4px;
+    }
+    
+    .home__order-btn:hover i {
+        transform: scale(1.1)
+    }
+    
+    .leaf3 {
+        width: 75px;
+        position: absolute;
+        top: 1.5rem;
+        left: -2rem;
+        transform: rotate(88deg);
+        opacity: .2;
+    }
+    
+    .leaf4 {
+        width: 90px;
+        position: absolute;
+        bottom: .6rem;
+        right: -2.3rem;
+        transform: rotate(-19deg);
+        opacity: .2;
+    }
+    /* ---------------about page------------ */
+    
+    #about {
+        padding-top: 90px;
+        position: relative;
+    }
+    
+    .about__content {
+        text-align: center;
+    }
+    
+    .about__content p {
+        padding: 40px 0;
+    }
+    
+    .about__subTitle {
+        line-height: 6px;
+        padding-top: 20px;
+    }
+    
+    .about__subTitle h3 {
+        font-size: 1.5rem;
+        font-family: var(--title-font);
+    }
+    
+    .about__sushi {
+        font-size: 1.4rem;
+        font-family: var(--title-font);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    #about .sushi-img {
+        width: 320px;
+        margin: 0 auto;
+    }
+    
+    .about__sushi img {
+        width: 30px;
+        margin-left: 8px;
+    }
+    
+    .leaf5 {
+        width: 100px;
+        opacity: .2;
+        position: absolute;
+        top: 21rem;
+        right: -2.8rem;
+        transform: rotate(-20deg);
+    }
+    /* ------------------popular-------------- */
+    
+    #popular {
+        padding-top: 90px;
+        text-align: center;
+        padding-bottom: 80px;
+    }
+    
+    .popular__card-group {
+        margin-top: 30px;
+    }
+    
+    .popular__card {
+        background-color: var(--white--color--filter);
+        border-radius: 30px;
+        width: 250px;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        padding: 30px 10px;
+        position: relative;
+        margin: 30px auto;
+    }
+    
+    .popular__card-img {
+        width: 220px;
+        position: absolute;
+        top: -45px;
+        left: 15px;
+        transition: all .6s;
+    }
+    
+    .popular__card-detail {
+        text-align: center;
+        margin-top: 80px;
+    }
+    
+    .popular__card-detail h3 {
+        font-size: 1rem;
+        padding-bottom: 5px;
+    }
+    
+    .popular__card-detail p {
+        font-size: .8rem;
+        padding-bottom: 5px;
+    }
+    
+    .popular__price {
+        color: var(--sub-title-color);
+        font-weight: 600;
+        padding-top: 10px;
+        font-size: 1.1rem;
+    }
+    
+    .popular__price a {
+        background-color: var(--sub-title-color);
+        color: var(--white-color);
+        font-size: 1.1rem;
+        width: 35px;
+        height: 35px;
+        padding: 3px 6px;
+        border-radius: 50%;
+        position: absolute;
+        right: 35px;
+        bottom: 25px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        transition: all .5s;
+    }
+    
+    .popular__price a:hover {
+        transform: scale(.89);
+    }
+    
+    .popular__card:hover .popular__card-img {
+        top: -50px;
+    }
+    /* =====================recently================ */
+    
+    #recently {
+        text-align: center;
+        position: relative;
+    }
+    
+    .recently__detail p {
+        margin: 35px auto;
+    }
+    
+    .recently__order-btn a {
+        background-color: var(--sub-title-color);
+        padding: 15px 25px;
+        border-radius: 35px;
+        color: var(--white-color);
+    }
+    
+    .recently__order-btn i {
+        font-size: 1.4rem;
+        padding-left: 4px;
+    }
+    
+    .recently__order-btn:hover i {
+        transform: translateX(4px)
+    }
+    
+    .recently__img {
+        width: 300px;
+        margin: 60px auto
+    }
+    
+    #recently .leaf1,
+    #recently .leaf2,
+    #recently .leaf8 {
+        position: absolute;
+    }
+    
+    #recently .leaf1 {
+        width: 25px;
+        top: 45px;
+        right: 30px;
+        transform: rotate(40deg);
+    }
+    
+    #recently .leaf2 {
+        width: 80px;
+        opacity: .2;
+        top: 160px;
+        left: -30px;
+        transform: rotate(10deg);
+    }
+    
+    #recently .leaf8 {
+        width: 40px;
+        top: 300px;
+        right: -20px;
+        transform: rotate(-20deg);
+        opacity: .2;
+    }
+    /* ================contactUs============== */
+    
+    #contactUs {
+        margin-top: 30px;
+    }
+    /* ============subscribe box=============== */
+    
+    .contactUs__subscribe-box {
+        width: 90%;
+        position: relative;
+        margin: 0 auto;
+    }
+    
+    .subscribe {
+        background-color: var(--black-red-color);
+        border-radius: 40px;
+        text-align: center;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .subscribe-box__img img {
+        width: 250px;
+        position: absolute;
+        top: -55px;
+        left: -110px;
+        overflow: hidden;
+    }
+    
+    .subscribe-box__detail {
+        margin-top: 110px;
+    }
+    
+    .subscribe-box__detail .title {
+        color: var(--white-color);
+    }
+    
+    .subscribe-box__input-box {
+        background-color: var(--white-color);
+        width: 300px;
+        height: 60px;
+        border-radius: 50px;
+        margin: 40px auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 10px;
+    }
+    
+    .subscribe-box__input-box input {
+        border: none;
+        outline: none;
+        padding-left: 5px;
+    }
+    
+    .subscribe-box__input-box a {
+        background-color: var(--sub-title-color);
+        padding: 11px;
+        border-radius: 30px;
+        color: var(--white-color);
+        font-size: .9rem;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+    }
+    
+    .subscribe-box__input-box i {
+        font-size: 1.4rem;
+        padding-left: 5px;
+        transition: all .5s;
+    }
+    
+    .subscribe-box__input-box:hover i {
+        transform: translateX(4px)
+    }
+    
+    #contactUs .leaf1 {
+        position: absolute;
+        width: 30px;
+        right: 2.3rem;
+        top: 18rem;
+        z-index: 30;
+        transform: rotate(45deg);
+        overflow: visible;
+    }
+    /* ==============contactUs summary================= */
+    
+    .contactUs__section {
+        position: relative;
+    }
+    
+    .contactUs__summary {
+        margin-top: 50px;
+        grid-template: max-content/auto auto;
+        gap: 2.5rem;
+        padding: 0 20px;
+    }
+    
+    .summary__logo {
+        grid-area: 1 / 1 / span 2 / span 2;
+    }
+    
+    .contactUs__summary h3 {
+        font-size: 1rem;
+        font-family: var(--body-font);
+        font-weight: 500;
+        padding-bottom: 20px;
+    }
+    
+    .contactUs__summary ul li {
+        padding-bottom: 8px;
+    }
+    
+    .contactUs__summary ul li a {
+        font-size: .8rem;
+        color: var(--grey-color);
+    }
+    
+    .contactUs__summary ul li a:hover {
+        color: var(--sub-title-color);
+    }
+    
+    .summary__logo .logo:hover {
+        color: var(--sub-title-color);
+    }
+    
+    .summary__logo p {
+        font-size: .8rem;
+        width: 200px;
+        margin-top: 10px;
+        font-weight: 400;
+    }
+    
+    .addressList li:hover a {
+        color: var(--sub-title-color);
+    }
+    
+    .summary__address a {
+        display: block;
+    }
+    
+    .addressList .time {
+        font-size: .8rem;
+        color: var(--grey-color);
+    }
+    
+    .socialMediaList {
+        display: flex;
+    }
+    
+    .socialMediaList i {
+        font-size: 1.2rem;
+        color: var(--sub-title-color);
+        margin-right: 20px;
+    }
+    
+    .contactUs__summary .leaf9,
+    .contactUs__summary .leaf2 {
+        position: absolute;
+        width: 30px;
+    }
+    
+    .contactUs__summary .leaf2 {
+        bottom: -70px;
+        left: 20px;
+        transform: rotate(45deg);
+    }
+    
+    .contactUs__summary .leaf9 {
+        top: 20px;
+        right: 50px;
+        transform: rotate(-45deg);
+    }
+    
+    .contactUs__summary .leaf8 {
+        position: absolute;
+        bottom: -90px;
+        right: -9rem;
+        opacity: .2;
+        width: 90px;
+        transform: rotate(-20deg);
+    }
+    /* =================footer=============== */
+    
+    #footer {
+        margin-top: 5px;
+        text-align: center;
+        padding-bottom: 30px;
+    }
+    
+    .footer__bank-cards img {
+        width: 35px;
+        margin: 0 5px;
+    }
+    
+    #footer p {
+        font-size: .8rem;
+    }
+    /* ==============responsive design============ */
+    
+    @media only screen and (max-width:340px) {
+        .container {
+            margin-inline: .1rem;
+        }
+        .home__content h3,
+        .sushi {
+            font-size: 2rem;
+        }
+        .subscribe {
+            padding-bottom: 50px;
+        }
+        .subscribe-box__img img {
+            top: -65px;
+            left: -130px;
+        }
+        .subscribe-box__input-box {
+            display: block;
+            padding-top: 15px;
+            width: 230px;
+        }
+        .subscribe-box__input-box input {
+            width: 100px;
+        }
+        .subscribe-box__input-box a {
+            margin: 30px 0px;
+            width: 215px;
+            text-align: center;
+            padding: 15px 0px;
+            padding-left: 55px;
+        }
+        .contactUs__subscribe-box .leaf1 {
+            display: none;
+        }
+    }
+    
+    @media only screen and (min-width:580px) {
+        /* for home page */
+        #home .home__sushi-img {
+            margin: 10px auto;
+        }
+        .home__section,
+        .about__section,
+        .popular__section,
+        .recently__section {
+            margin: 0 7rem;
+        }
+        #contactUs .contactUs__subscribe-box {
+            width: 600px;
+        }
+        #contactUs .contactUs__summary {
+            grid-template: max-content/auto auto auto;
+        }
+        #contactUs .summary__logo {
+            grid-area: 1 / 1 / span 1 / span3;
+        }
+    }
+    
+    @media only screen and (min-width:768px) {
+        /*-----nav bar----- */
+        .nav__toggle,
+        .nav__close {
+            display: none;
+        }
+        .nav__bar .logo img {
+            height: 20px;
+        }
+        .nav__menu {
+            padding-left: 60px;
+        }
+        .nav__menu__list {
+            display: flex;
+            font-size: .9rem;
+            font-weight: 500;
+            justify-content: right;
+        }
+        .nav__items a {
+            padding-right: 35px;
+        }
+        .nav__theme {
+            height: 20px;
+        }
+        /* --------------home ---------- */
+        .home__section,
+        .about__section,
+        .popular__section,
+        .recently__section {
+            margin: 0 8rem;
+        }
+        /*---------- popular--------- */
+        .popular__card-group {
+            grid-template: max-content/auto auto;
+            gap: 2.5rem;
+            margin-top: 50px;
+        }
+        .popular__card {
+            margin: 30px auto;
+        }
+        /* ---------contact us------ */
+        #contactUs .contactUs__subscribe-box {
+            width: 1000px;
+        }
+        /* ---footer---- */
+        #footer {
+            grid-template: max-content/2fr auto;
+            padding: 20px;
+            text-align: initial;
+        }
+        .footer__bank-cards {
+            order: 1;
+        }
+    }
+    
+    @media only screen and (min-width:1024px) {
+        .nav__menu {
+            padding-left: 22rem;
+        }
+        /* -----home------ */
+        .home__section {
+            grid-template: max-content/1fr 1fr;
+            gap: 2.5rem;
+        }
+        .home__content {
+            text-align: initial;
+            padding-right: 2rem;
+        }
+        .home__content h3,
+        .sushi {
+            font-size: 2.1rem;
+        }
+        .home__sushi-img {
+            margin: 10px auto;
+            order: 1;
+        }
+        .sushi {
+            justify-content: start;
+        }
+        .home__order-btn {
+            justify-content: start;
+        }
+        /* -------about---------- */
+        .about__section {
+            grid-template: max-content/1fr 1fr;
+            gap: 2.5rem;
+        }
+        .about__content {
+            text-align: initial;
+            order: 1;
+            padding-right: 2rem;
+        }
+        .about__sushi {
+            justify-content: start;
+            font-size: 2.2rem;
+            padding-bottom: 10px;
+        }
+        .about__subTitle h3,
+        .title {
+            font-size: 2.2rem;
+            padding-bottom: 8px;
+        }
+        .subtitle {
+            padding-bottom: 15px;
+        }
+        /* -----------popular------- */
+        .popular__card-group {
+            grid-template: max-content/1fr 1fr 1fr;
+        }
+        /* --------- recently-----------*/
+        .recently__section {
+            grid-template: max-content/1fr 1fr;
+            gap: 1.4rem;
+        }
+        .recently__detail {
+            text-align: initial;
+        }
+        /* -------------contact us subscribe box------- */
+        .subscribe {
+            grid-template: max-content/auto auto;
+            gap: 1.3rem;
+        }
+        .subscribe-box__img img {
+            width: 350px;
+            top: 50px;
+            left: 50px;
+        }
+        .subscribe-box__input-box {
+            width: 350px;
+        }
+        .subscribe-box__input-box a {
+            background-color: var(--sub-title-color);
+            padding: 14px;
+            border-radius: 30px;
+            color: var(--white-color);
+            font-size: .9rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+        }
+        /* contact us summary */
+        .contactUs__summary {
+            grid-template: max-content/auto auto auto auto auto;
+            gap: 1.5rem;
+        }
+        .summary__logo {
+            grid-area: 2/ 1 / span 1/ span 2;
+        }
+        #about .sushi-img,
+        .recently__img,
+        .home__sushi-img {
+            width: 100%;
+        }
+    }
+    
+    @media only screen and (min-width:1280px) {
+        section {
+            max-width: 1496px;
+        }
+        #footer {
+            grid-template: max-content/2fr auto;
+            text-align: initial;
+        }
+        .footer__bank-cards {
+            order: 1;
+        }
+        .nav__bar {
+            padding: 15px 120px;
+        }
+        .home__content h3,
+        .sushi {
+            font-size: 3rem;
+        }
+        .home__section {
+            margin: 0 7rem;
+        }
+        section {
+            padding: 0rem 7.5rem;
+        }
+        .nav__bar {
+            padding: 0rem 12rem;
+        }
+        #recently .leaf1 {
+            left: 35rem;
+        }
+        .contactUs__summary .leaf9 {
+            top: 40rem;
+            right: 14rem;
+            transform: rotate(-45deg);
+        }
+        #about .sushi-img,
+        .recently__img,
+        .home__sushi-img {
+            width: 100%;
+        }
+    }
+    /* scroll up icon */
+    
+    .scrollUp {
+        color: #DC7A44;
+        font-size: 1.1rem;
+        background-color: var(--white-color);
+        padding: 3px 5px;
+        border-radius: 5px;
+        position: fixed;
+        bottom: 3.5rem;
+        right: 2.5rem;
+        display: none;
+    }
+    
+    .scrollUp.show {
+        display: inline;
+    }
