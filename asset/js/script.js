@@ -67,7 +67,7 @@ const sr = ScrollReveal({
     reset: true,
 });
 
-sr.reveal(`.home__sushi-img, .contactUs__subscribe-box, .summary__logo, .summary__mainMenu , .summary__information, .summary__address,.summary__socialMedia,#footer`);
+sr.reveal(`.home__sushi-img, .contactUs__subscribe-box, .contactUs__summary,.footer`);
 sr.reveal(`.home__content`, { origin: 'bottom' });
 sr.reveal(`.about__content, .recently__detail`, { origin: 'left' });
 sr.reveal(`.sushi-img, .recently__img`, { origin: 'right' });
