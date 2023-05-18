@@ -1,16 +1,13 @@
- <header class="header">
-    <nav class="nav__bar">
-        
-        <div class="nav__menu">
-            <ul class="nav__list">
-               
-            </ul>
+const sr = ScrollReveal({
+    origin: 'top',
+    distance: '60px',
+    duration: 2500,
+    delay: 400,
+    reset: true,
+});
 
-           
-        </div>
 
-        
-
-    </nav>
-
-</header>
+// sr.reveal(`.home__content`, { origin: 'bottom' });
+// sr.reveal(`.about__content, .recently__detail`, { origin: 'left' });
+// sr.reveal(`.sushi-img, .recently__img`, { origin: 'right' });
+// sr.reveal(`.popular__card`, { intervar: 100 });
